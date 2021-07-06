@@ -1,0 +1,36 @@
+micronaut:
+  application:
+    name: cleanarch
+
+# Server Configuration
+server:
+  port: 8384
+
+# DB Configuration
+db:
+  addr: localhost:5432
+  name: cleanarch
+  user: cleanarch
+  pass: cleanarch
+  show-sql: false
+
+datasources:
+  default:
+    url: "jdbc:postgresql://${db.addr}/${db.name}"
+    driverClassName: org.postgresql.Driver
+    username: ${db.user}
+    password: ${db.pass}
+
+jpa:
+  default:
+    packages-to-scan:
+      - 'com.vmotta.cleanarch.entities'
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
+
+flyway:
+  datasources:
+    default:
+      enabled: true

@@ -1,0 +1,41 @@
+curl --location --request POST 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "name":"Maria",
+    "cpf":"32616864053"
+}' | jq
+
+curl --location --request POST 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "name":"José",
+    "cpf":"31887275002"
+}' | jq
+
+curl --location --request POST 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "name":"Manoel",
+    "cpf":"08765461061"
+}' | jq
+
+curl --location --request POST 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "name":"Marina",
+    "cpf":"11111111111"
+}' | jq
+
+curl --location --request POST 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "name":"Marcos",
+    "cpf":"50253711045"
+}' | jq
+
+curl --location --request POST 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "name":"Vitor",
+    "cpf":"19122556001"
+}' | jq
+
+curl --location --request PUT 'http://localhost:8080/people' --header 'Content-Type: application/json' --data-raw '{
+    "id": "fb7fcb71-62e0-4e0a-b221-4a07d57d80d2",
+    "name":"Vitor Hugo",
+    "cpf":"98056846018"
+}' | jq
+
+curl --location --request GET 'http://localhost:8080/people' --header 'Content-Type: application/json' | jq
+
+curl --location --request GET 'http://localhost:8080/people/<id>' --header 'Content-Type: application/json' | jq
+
+curl --location --request DELETE 'http://localhost:8080/people/<id>' --header 'Content-Type: application/json' | jq
